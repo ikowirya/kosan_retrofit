@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_listsewa"
+            android:title="List Sewa" />
+        <item
+            android:id="@+id/nav_datakost"
+            android:title="Data Kost" />
+        <item
+            android:id="@+id/nav_datapembeli"
+            android:title="Data Pembeli" />
+    </group>
+
+
+</menu>

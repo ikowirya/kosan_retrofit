@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_insert"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hi.kosan.InsertActivity"
+    >
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID : "
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvNamaPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Pembeli: "
+        android:layout_below="@id/tvId"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvNoTelpPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Telp: "
+        android:layout_below="@id/tvNamaPembeli"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan ID"
+        android:layout_toRightOf="@+id/tvId"
+        android:layout_alignBaseline="@+id/tvId"/>
+    <EditText
+        android:id="@+id/edtNamaPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Nama Pembeli"
+        android:layout_toRightOf="@+id/tvNamaPembeli"
+        android:layout_alignBaseline="@+id/tvNamaPembeli"/>
+    <EditText
+        android:id="@+id/edtNoTelpPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan No Telp Pembeli"
+        android:layout_toRightOf="@+id/tvNoTelpPembeli"
+        android:layout_alignBaseline="@+id/tvNoTelpPembeli"/>
+    <LinearLayout
+        android:id="@+id/Linearlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvNoTelpPembeli"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/btInserting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert"/>
+        <Button
+            android:id="@+id/btBackGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"/>
+    </LinearLayout>
+
+</RelativeLayout>

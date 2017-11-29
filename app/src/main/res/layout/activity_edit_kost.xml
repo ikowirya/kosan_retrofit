@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hi.kosan.EditKostActivity">
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID : "
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvNamaKost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Kost: "
+        android:layout_below="@id/tvId"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvAlamatKost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat Kost: "
+        android:layout_below="@id/tvNamaKost"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvLuasKamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Luas Kamar: "
+        android:layout_below="@id/tvAlamatKost"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tvBiayaSewa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya Sewa: "
+        android:layout_below="@id/tvLuasKamar"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan ID"
+        android:layout_toRightOf="@+id/tvId"
+        android:layout_alignBaseline="@+id/tvId"/>
+    <EditText
+        android:id="@+id/edtNamaKost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Nama Kost"
+        android:layout_toRightOf="@+id/tvNamaKost"
+        android:layout_alignBaseline="@+id/tvNamaKost"/>
+    <EditText
+        android:id="@+id/edtAlamatKost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Kost"
+        android:layout_toRightOf="@+id/tvAlamatKost"
+        android:layout_alignBaseline="@+id/tvAlamatKost"/>
+    <EditText
+        android:id="@+id/edtLuasKamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Luas Kamar"
+        android:layout_toRightOf="@+id/tvLuasKamar"
+        android:layout_alignBaseline="@+id/tvLuasKamar"/>
+    <EditText
+        android:id="@+id/edtBiayaSewa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Biaya Sewa"
+        android:layout_toRightOf="@+id/tvBiayaSewa"
+        android:layout_alignBaseline="@+id/tvBiayaSewa"/>
+    <LinearLayout
+        android:id="@+id/Linearlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvBiayaSewa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btUpdate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"/>
+
+        <Button
+            android:id="@+id/btDelete2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"/>
+        <Button
+            android:id="@+id/btBackGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"/>
+    </LinearLayout>
+</RelativeLayout>
