@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/id_reservasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/nama_kost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nama Kost"
+            android:layout_below="@id/id_reservasi"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/nama_penjual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nama Penjual"
+            android:textSize="15sp"
+            android:layout_below="@id/nama_kost"
+            />
+        <TextView
+            android:id="@+id/nama_pembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nama Pembeli"
+            android:textSize="15sp"
+            android:layout_below="@id/nama_penjual"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/holo_green_light" />
+</LinearLayout>

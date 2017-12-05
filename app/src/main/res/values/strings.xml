@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kosan</string>
+    <string name="app_name">Aplikasi Kost</string>
     <string name="title_activity_menu">Aplikasi Info Kost</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -7,4 +7,5 @@
 
     <string name="action_settings">Logout</string>
     <string name="title_activity_menu_kost">MenuKostActivity</string>
+    <string name="title_activity_menu_reservasi">MenuReservasiActivity</string>
 </resources>

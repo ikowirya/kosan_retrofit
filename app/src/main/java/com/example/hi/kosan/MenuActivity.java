@@ -138,7 +138,7 @@ public class MenuActivity extends AppCompatActivity
 
         if (id == R.id.nav_listsewa) {
             // Handle the camera action
-
+            viewreservasi();
         } else if (id == R.id.nav_datakost) {
             crudkost();
         } else if (id == R.id.nav_datapembeli) {
@@ -148,6 +148,10 @@ public class MenuActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void viewreservasi(){
+        startActivity(new Intent(MenuActivity.this,MenuReservasiActivity.class));
+        finish();
     }
     private void crudpembeli(){
         startActivity(new Intent(MenuActivity.this,MenuActivity.class));

@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/title_activity_menu"
+            android:label="List Anggota Pembeli"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
@@ -39,10 +39,14 @@
             android:label="Update Data Pembeli" />
         <activity
             android:name=".MenuKostActivity"
-            android:label="@string/title_activity_menu"
+            android:label="List Rumah Kost"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditKostActivity" />
-        <activity android:name=".InsertKostActivity"></activity>
+        <activity android:name=".InsertKostActivity" />
+        <activity
+            android:name=".MenuReservasiActivity"
+            android:label="List Penyewa Kost"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

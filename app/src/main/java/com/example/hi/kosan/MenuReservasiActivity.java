@@ -2,7 +2,6 @@ package com.example.hi.kosan;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,12 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
-import com.example.hi.kosan.Adapter.KostAdapter;
-import com.example.hi.kosan.Model.GetKost;
-import com.example.hi.kosan.Model.Kost;
+import com.example.hi.kosan.Adapter.ReservasiAdapter;
+import com.example.hi.kosan.Model.GetReservasi;
+import com.example.hi.kosan.Model.Reservasi;
 import com.example.hi.kosan.Rest.ApiClient;
 import com.example.hi.kosan.Rest.ApiInterface;
 
@@ -29,37 +27,29 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MenuKostActivity extends AppCompatActivity
+public class MenuReservasiActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Button btIns;
     ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public static MenuKostActivity ma;
+    public static MenuReservasiActivity ma;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_kost);
+        setContentView(R.layout.activity_menu_reservasi);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton btIns = (FloatingActionButton) findViewById(R.id.btIns);
-        btIns.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MenuKostActivity.this, InsertKostActivity.class));
-            }
-        });
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewKost);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewReservasi);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         ma=this;
         refresh();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_kost);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_reservasi);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -68,30 +58,28 @@ public class MenuKostActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
     public void refresh() {
-        Call<GetKost> kostCall = mApiInterface.getKost();
-        kostCall.enqueue(new Callback<GetKost>() {
+        Call<GetReservasi> reservasiCall = mApiInterface.getReservasi();
+        reservasiCall.enqueue(new Callback<GetReservasi>() {
             @Override
-            public void onResponse(Call<GetKost> call, Response<GetKost>
+            public void onResponse(Call<GetReservasi> call, Response<GetReservasi>
                     response) {
-                List<Kost> KostList = response.body().getListDataKost();
-                Log.d("Retrofit Get", "Jumlah data Kost: " +
-                        String.valueOf(KostList.size()));
-                mAdapter = new KostAdapter(KostList);
+                List<Reservasi> ReservasiList = response.body().getListDataReservasi();
+                Log.d("Retrofit Get", "Jumlah data Reservasi: " +
+                        String.valueOf(ReservasiList.size()));
+                mAdapter = new ReservasiAdapter(ReservasiList);
                 mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
-            public void onFailure(Call<GetKost> call, Throwable t) {
+            public void onFailure(Call<GetReservasi> call, Throwable t) {
                 Log.e("Retrofit Get", t.toString());
             }
         });
     }
-
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_kost);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -102,7 +90,7 @@ public class MenuKostActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_kost, menu);
+        getMenuInflater().inflate(R.menu.menu_reservasi, menu);
         return true;
     }
 
@@ -130,26 +118,27 @@ public class MenuKostActivity extends AppCompatActivity
         if (id == R.id.nav_listsewa) {
             // Handle the camera action
             viewreservasi();
+
         } else if (id == R.id.nav_datakost) {
             crudkost();
         } else if (id == R.id.nav_datapembeli) {
             crudpembeli();
         }
 
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_kost);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_reservasi);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
     private void viewreservasi(){
-        startActivity(new Intent(MenuKostActivity.this,MenuReservasiActivity.class));
+        startActivity(new Intent(MenuReservasiActivity.this,MenuReservasiActivity.class));
         finish();
     }
     private void crudpembeli(){
-        startActivity(new Intent(MenuKostActivity.this,MenuActivity.class));
+        startActivity(new Intent(MenuReservasiActivity.this,MenuActivity.class));
         finish();
     }
     private void crudkost(){
-        startActivity(new Intent(MenuKostActivity.this,MenuKostActivity.class));
+        startActivity(new Intent(MenuReservasiActivity.this,MenuKostActivity.class));
         finish();
     }
 }

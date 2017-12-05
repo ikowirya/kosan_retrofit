@@ -2,6 +2,7 @@ package com.example.hi.kosan.Rest;
 
 import com.example.hi.kosan.Model.GetKost;
 import com.example.hi.kosan.Model.GetPembeli;
+import com.example.hi.kosan.Model.GetReservasi;
 import com.example.hi.kosan.Model.PostPutDelKost;
 import com.example.hi.kosan.Model.PostPutDelPembeli;
 
@@ -54,5 +55,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @HTTP(method = "DELETE", path = "kost", hasBody = true)
     Call<PostPutDelKost> deleteKost(@Field("id_kost") String id_kost);
+
+    @GET("reservasi")
+    Call<GetReservasi> getReservasi();
 }
 
