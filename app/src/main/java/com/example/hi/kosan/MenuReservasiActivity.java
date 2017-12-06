@@ -30,6 +30,7 @@ import retrofit2.Response;
 public class MenuReservasiActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Button btIns;
+    private Session session;
     ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -103,10 +104,16 @@ public class MenuReservasiActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.btnLogout) {
+            logout();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    private void logout(){
+        session.setLoggedin(false);
+        finish();
+        startActivity(new Intent(MenuReservasiActivity.this,LoginActivity.class));
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
